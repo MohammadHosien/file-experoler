@@ -14,7 +14,7 @@ const File = ({
   updateNameHandler: (e: string) => void;
 }) => {
   const [openInput, setOpenInput] = useState(false);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(name);
 
   const extentions = [
     { name: "html", icon: <IoLogoHtml5 size={30} /> },
@@ -35,11 +35,13 @@ const File = ({
                 </div>
               ) : (
                 <input
-                  className="outline border w-[100px]"
+                value={name}
+                  className="outline-none border w-[100px]"
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       updateNameHandler(input);
+                      setOpenInput(false)
                     }
                   }}
                 />
