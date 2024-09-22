@@ -1,11 +1,11 @@
 "use client";
 
-import Root from "@/components/Root";
+import Folder from "@/components/Folder";
 
 export default function Home() {
 
   return (
-    <Root
+    <Folder
       name="root"
       getData={(e)=>{
         console.log(e)
