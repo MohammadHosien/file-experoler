@@ -150,8 +150,13 @@ const Folder = ({
                 const id = uuid();
                 setDirection([
                   ...direction,
-                  { name: `new folder (${num})`, subset: [], id },
+                  {
+                    name: num === 0 ? "new folder" : `new folder (${num})`,
+                    subset: [],
+                    id,
+                  },
                 ]);
+                setFolderIsOpen(true)
               }}
               size={30}
             />
